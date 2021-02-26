@@ -1,6 +1,16 @@
 <h1>Fuel Station Found!</h1>
 <h2>Details:</h2>
-<h3></h3>
+Name: <%= @directions.destination.name %>
+Fuel Type: <%= @directions.destination.fuel_type %>
+Access Times: <%= @directions.destination.access_times %>
+Address: <%= @directions.destination.address %>
 <br><br>
 <h2>Directions:</h2>
-<h3></h3>
+Estimated Travel Time: <%= @directions.time %>
+Distance: <%= @directions.distance %>
+Directions: <br>
+<li>
+  <% @directions.step_directions.each do |direction| %>
+    <ul><%= direction %></ul>
+  <% end %>
+</li>
